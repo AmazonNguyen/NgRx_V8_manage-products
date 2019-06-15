@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+
+
+
+const routes: Routes = [
+  {path: '', redirectTo: '/list-product', pathMatch: 'full'},
+  {path: 'list-product', loadChildren: './products/product.module#ProductModule'},
+];
+@NgModule({
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(routes),
+    CommonModule
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }
